@@ -1,0 +1,989 @@
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WX Elegance Dress Shop</title>
+    
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js"></script>
+</head>
+<body>
+
+	<header>
+		<h1>WX Elegance Dress Shop</h1>
+		<img src="WX Dress Shop.png" alt="Logo" width="100" height="100">
+	</header>
+
+	<nav>
+		<a href="WX Elegance Dress Shop.html">Home</a>
+		<a href="#" onclick="openLoginModal()">Login</a>
+		<a href="#">Shop</a>
+		<a href="#" onclick="openCartModal()">Cart</a>
+		<a href="WX Elegance Dress Shop.html">Contact Us</a>
+	
+	<div class="search-bar">
+		<input type="text" id="searchInput" placeholder="Search...">
+		<button onclick="searchDress()">Search</button>
+        </div>
+
+	</nav>
+
+	<div class="filter-options">
+	<label for="size">Size:</label>
+	<select id="size">
+		<option value="all">All Sizes</option>
+		<option value="XS">XS</option>
+		<option value="S">S</option>
+		<option value="M">M</option>
+		<option value="L">L</option>
+		<option value="XL">XL</option>
+		<option value="XXL">XXL</option>
+	</select>
+
+        <label for="color">Color:</label>
+        <select id="color">
+		<option value="all">All Colors</option>
+            <option value="Blue">Blue</option>
+            <option value="Beige">Beige</option>
+            <option value="Brown">Brown</option>
+            <option value="Black">Black</option>
+            <option value="Orange">Orange</option>
+            <option value="Green">Green</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Pink">Pink</option>
+            <option value="White">White</option>
+            <option value="Purple">Purple</option>
+        </select>
+
+        <label for="productType">Product Type:</label>
+        <select id="productType">
+		<option value="all">All Types</option>
+            <option value="LongDress">Long Dress</option>
+            <option value="ShortDress">Short Dress</option>
+            <option value="ShortSleeveDress">Short Sleeve Dress</option>
+            <option value="LongSleeveDress">Long Sleeve Dress</option>
+            <option value="ShirtDress">Shirt Dress</option>
+        </select>
+
+        <label for="productStyle">Product Style:</label>
+        <select id="productStyle">
+		<option value="all">All Styles</option>
+            <option value="Casual">Casual</option>
+            <option value="WorkOutdoor">Work/Outdoor</option>
+        </select>
+
+        <label for="price">Price:</label>
+        <select id="price">
+		<option value="all">All Prices</option>
+            <option value="40-50">$40-50</option>
+            <option value="51-60">$51-60</option>
+            <option value="61-70">$61-70</option>
+            <option value="71-80">$71-80</option>
+            <option value="81-90">$81-90</option>
+            <option value="91-100">$91-100</option>
+            <option value="100+">$100+</option>
+        </select>
+
+        <button onclick="applyFilters()">Apply Filters</button>
+
+    	<button onclick="resetFilters()">Reset Filters</button>
+
+</div>
+
+
+
+ <main>
+	<div class="product" id="dress1" data-sizes="['XS', 'S', 'M']" data-color="White, Blue,Black" data-product-type="Short Dress, Short Sleeve Dress" data-product-style="Casual" data-price="40-50">
+		<img src="image1(1).png" alt="Dress 1(1)" width="280" height="350">
+		<img src="image1(2).png" alt="Dress 1(2)" width="280" height="350">
+		<img src="image1(3).png" alt="Dress 1(3)" width="280" height="350">
+		<img src="image1(4).png" alt="Dress 1(4)" width="280" height="350">
+		<h2>Dress 1</h2>
+		<p>Price: $ 45.9</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="XS">XS</option>
+				<option value="S">S</option>
+				<option value="M">M</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Blue">Blue</option>
+				<option value="Black">Black</option>
+				<option value="White">White</option>
+			</select>
+
+		<button type="button" onclick="addToCart('Dress 1', 45.9, 'color', 'size')">Add to Cart</button>
+	</form>
+	</div>
+
+	<div class="product" id="dress2" data-sizes="['S', 'M', 'L']" data-color="Black, Purple" data-product-type="Short Dress, Long Sleeve Dress,Shirt Dress" data-product-style="WorkOutdoor" data-price="61-70">
+		<img src="image2(1).png" alt="Dress 2(1)" width="280" height="350">
+		<img src="image2(2).png" alt="Dress 2(2)" width="280" height="350">
+		<img src="image2(3).png" alt="Dress 2(3)" width="280" height="350">
+		<img src="image2(4).png" alt="Dress 2(4)" width="280" height="350">
+		<h2>Dress 2</h2>
+		<p>Price: $ 69</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="S">S</option>
+				<option value="M">M</option>
+				<option value="L">L</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Purple">Purple</option>
+				<option value="Black">Black</option>
+			</select>
+
+			<button type="button" onclick="addToCart('Dress 2', 69, 'color', 'size')">Add to Cart</button>
+		</form>
+	</div>
+
+	<div class="product" id="dress3" data-sizes="['S', 'M', 'L']" data-color="Khaki" data-product-type="Long Dress, Short Sleeve Dress" data-product-style="Casual" data-price="51-60">
+		<img src="image3(1).png" alt="Dress 3(1)" width="280" height="350">
+		<img src="image3(2).png" alt="Dress 3(2)" width="280" height="350">
+		<h2>Dress 3</h2>
+		<p>Price: $ 59.9</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="S">S</option>
+				<option value="M">M</option>
+				<option value="L">L</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Khaki">Khaki</option>
+			</select>
+
+			<button type="button" onclick="addToCart('Dress 3', 59.9, 'color', 'size')">Add to Cart</button>
+		</form>
+	</div>
+
+	<div class="product" id="dress4" data-sizes="['S', 'M']" data-color="Blue" data-product-type="Short Dress, Long Sleeve Dress" data-product-style="Casual" data-price="61-70">
+		<img src="image4(1).png" alt="Dress 4(1)" width="280" height="350">
+		<img src="image4(2).png" alt="Dress 4(2)" width="280" height="350">
+		<img src="image4(3).png" alt="Dress 4(3)" width="280" height="350">
+		<img src="image4(4).png" alt="Dress 4(4)" width="280" height="350">
+		<h2>Dress 4</h2>
+		<p>Price: $ 69</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="S">S</option>
+				<option value="M">M</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Blue">Blue</option>
+			</select>
+
+			<button type="button" onclick="addToCart('Dress 4', 69, 'color', 'size')">Add to Cart</button>
+		</form>
+	</div>
+
+	<div class="product" id="dress5" data-sizes="['XS', 'S', 'M','L']" data-color="Black, Red" data-product-type="Long Dress, Stort Sleeve Dress" data-product-style="WorkOutdoor" data-price="61-70">
+		<img src="image5(1).png" alt="Dress 5(1)" width="280" height="350">
+		<img src="image5(2).png" alt="Dress 5(2)" width="280" height="350">
+		<img src="image5(3).png" alt="Dress 5(3)" width="280" height="350">
+		<h2>Dress 5</h2>
+		<p>Price: $ 65.9</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="XS">XS</option>
+				<option value="S">S</option>
+				<option value="M">M</option>
+				<option value="L">L</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Black">Black</option>
+				<option value="Red">Red</option>
+			</select>
+
+			<button type="button" onclick="addToCart('Dress 5', 65.9, 'color', 'size')">Add to Cart</button>
+		</form>
+	</div>
+
+	<div class="product" id="dress6" data-sizes="['S', 'M', 'L','XL']" data-color="Green" data-product-type="Long Dress, Stort Sleeve Dress" data-product-style="WorkOutdoor" data-price="51-60">
+		<img src="image6(1).png" alt="Dress 6(1)" width="280" height="350">
+		<img src="image6(2).png" alt="Dress 6(2)" width="280" height="350">
+		<img src="image6(3).png" alt="Dress 6(3)" width="280" height="350">
+		<img src="image6(4).png" alt="Dress 6(4)" width="280" height="350">
+		<h2>Dress 6</h2>
+		<p>Price: $ 59.9</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="S">S</option>
+				<option value="M">M</option>
+				<option value="L">L</option>
+				<option value="XL">XL</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Green">Green</option>
+			</select>
+
+			<button type="button" onclick="addToCart('Dress 6', 59.9, 'color', 'size')">Add to Cart</button>
+		</form>
+	</div>
+
+	<div class="product" id="dress7" data-sizes="['XS', 'S', 'M']" data-color="Red" data-product-type="Short Dress, Stort Sleeve Dress" data-product-style="WorkOutdoor" data-price="51-60">
+		<img src="image7(1).png" alt="Dress 7(1)" width="280" height="350">
+		<img src="image7(2).png" alt="Dress 7(2)" width="280" height="350">
+		<img src="image7(3).png" alt="Dress 7(3)" width="280" height="350">
+		<img src="image7(4).png" alt="Dress 7(4)" width="280" height="350">
+		<h2>Dress 7</h2>
+		<p>Price: $ 59</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="XS">XS</option>
+				<option value="S">S</option>
+				<option value="M">M</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Red">Red</option>
+			</select>
+
+			<button type="button" onclick="addToCart('Dress 7', 59, 'color', 'size')">Add to Cart</button>
+		</form>
+	</div>
+
+	<div class="product" id="dress8" data-sizes="['S', 'M', 'L']" data-color="Red" data-product-type="Short Dress, Stort Sleeve Dress" data-product-style="Casual" data-price="61-70">
+		<img src="image8(1).png" alt="Dress 8(1)" width="280" height="350">
+		<img src="image8(2).png" alt="Dress 8(2)" width="280" height="350">
+		<img src="image8(3).png" alt="Dress 8(3)" width="280" height="350">
+		<h2>Dress 8</h2>
+		<p>Price: $ 65.9</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="S">S</option>
+				<option value="M">M</option>
+				<option value="L">L</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Red">Red</option>
+			</select>
+
+			<button type="button" onclick="addToCart('Dress 8', 65.9, 'color', 'size')">Add to Cart</button>
+		</form>
+	</div>
+
+	<div class="product" id="dress9" data-sizes="['S', 'M', 'L']" data-color="Beige" data-product-type="Long Dress, Stort Sleeve Dress" data-product-style="WorkOutdoor" data-price="71-80">
+		<img src="image9(1).png" alt="Dress 9(1)" width="280" height="350">
+		<img src="image9(2).png" alt="Dress 9(2)" width="280" height="350">
+		<img src="image9(3).png" alt="Dress 9(3)" width="280" height="350">
+		<img src="image9(4).png" alt="Dress 9(4)" width="280" height="350">
+		<h2>Dress 9</h2>
+		<p>Price: $ 75.9</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="S">S</option>
+				<option value="M">M</option>
+				<option value="L">L</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Beige">Beige</option>
+			</select>
+
+			<button type="button" onclick="addToCart('Dress 9', 75.9, 'color', 'size')">Add to Cart</button>
+		</form>
+	</div>
+
+	<div class="product" id="dress10" data-sizes="['XS', 'S', 'M','L','XL']" data-color="Red" data-product-type="Short Dress, Stort Sleeve Dress" data-product-style="WorkOutdoor" data-price="81-90">
+		<img src="image10(1).png" alt="Dress 10(1)" width="280" height="350">
+		<img src="image10(2).png" alt="Dress 10(2)" width="280" height="350">
+		<img src="image10(3).png" alt="Dress 10(3)" width="280" height="350">
+		<h2>Dress 10</h2>
+		<p>Price: $ 89</p>
+		<form>
+			<label for="size">Size:</label>
+			<select id="size" name="size">
+				<option value="XS">XS</option>
+				<option value="S">S</option>
+				<option value="M">M</option>
+				<option value="L">L</option>
+				<option value="XL">XL</option>
+			</select>
+			
+			<label for="color">Color:</label>
+			<select id="color" name="color">
+				<option value="Red">Red</option>
+			</select>
+
+			<button type="button" onclick="addToCart('Dress 10', 89, 'color', 'size')">Add to Cart</button>
+		</form>
+	</div>
+
+
+<div class="product" id="dress11">
+	<img src="image11(1).png" alt="Dress 11(1)" width="280" height="350">
+	<img src="image11(2).png" alt="Dress 11(2)" width="280" height="350">
+	<img src="image11(3).png" alt="Dress 11(3)" width="280" height="350">
+	<h2>Dress 11</h2>
+	<p>Price: $ 58.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Red">Red</option>
+			<option value="Yellow">Yellow</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 11', 58.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress12">
+	<img src="image12(1).png" alt="Dress 12(1)" width="280" height="350">
+	<img src="image12(2).png" alt="Dress 12(2)" width="280" height="350">
+	<img src="image12(3).png" alt="Dress 12(3)" width="280" height="350">
+	<img src="image12(4).png" alt="Dress 12(4)" width="280" height="350">
+	<h2>Dress 12</h2>
+	<p>Price: $ 49.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Black">Black</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 12', 49.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress13">
+	<img src="image13(1).png" alt="Dress 13(1)" width="280" height="350">
+	<img src="image13(2).png" alt="Dress 13(2)" width="280" height="350">
+	<img src="image13(3).png" alt="Dress 13(3)" width="280" height="350">
+	<h2>Dress 13</h2>
+	<p>Price: $ 79.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+			<option value="XL">XL</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Red">Red</option>
+			<option value="Black">Black</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 13', 79.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress14">
+	<img src="image14(1).png" alt="Dress 14(1)" width="280" height="350">
+	<img src="image14(2).png" alt="Dress 14(2)" width="280" height="350">
+	<img src="image14(3).png" alt="Dress 14(3)" width="280" height="350">
+	<h2>Dress 14</h2>
+	<p>Price: $ 62.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Brown">Brown</option>
+			<option value="Beige">Beige</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 14', 62.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress15">
+	<img src="image15(1).png" alt="Dress 15(1)" width="280" height="350">
+	<img src="image15(2).png" alt="Dress 15(2)" width="280" height="350">
+	<img src="image15(3).png" alt="Dress 15(3)" width="280" height="350">
+	<h2>Dress 15</h2>
+	<p>Price: $ 69.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Pink">Pink</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 15', 69.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress16">
+	<img src="image16(1).png" alt="Dress 16(1)" width="280" height="350">
+	<img src="image16(2).png" alt="Dress 16(2)" width="280" height="350">
+	<img src="image16(3).png" alt="Dress 16(3)" width="280" height="350">
+	<h2>Dress 16</h2>
+	<p>Price: $ 59.5</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="White">White</option>
+			<option value="Blue">Blue</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 16', 59.5, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress17">
+	<img src="image17(1).png" alt="Dress 17(1)" width="280" height="350">
+	<img src="image17(2).png" alt="Dress 17(2)" width="280" height="350">
+	<h2>Dress 17</h2>
+	<p>Price: $ 65.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Blue">Blue</option>
+			<option value="Pink">Pink</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 17', 65.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress18">
+	<img src="image18(1).png" alt="Dress 18(1)" width="280" height="350">
+	<img src="image18(2).png" alt="Dress 18(2)" width="280" height="350">
+	<img src="image18(3).png" alt="Dress 18(3)" width="280" height="350">
+	<img src="image18(4).png" alt="Dress 18(4)" width="280" height="350">
+	<h2>Dress 18</h2>
+	<p>Price: $ 55.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="White">White</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 18', 55.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress19">
+	<img src="image19(1).png" alt="Dress 19(1)" width="280" height="350">
+	<img src="image19(2).png" alt="Dress 19(2)" width="280" height="350">
+	<img src="image19(3).png" alt="Dress 19(3)" width="280" height="350">
+	<img src="image19(4).png" alt="Dress 19(4)" width="280" height="350">
+	<h2>Dress 19</h2>
+	<p>Price: $ 72.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+			<option value="XL">XL</option>
+			<option value="XXL">XXL</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Black">Black</option>
+			<option value="Grey">Grey</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 19', 72.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress20">
+	<img src="image20(1).png" alt="Dress 20(1)" width="280" height="350">
+	<img src="image20(2).png" alt="Dress 20(2)" width="280" height="350">
+	<img src="image20(3).png" alt="Dress 20(3)" width="280" height="350">
+	<img src="image20(4).png" alt="Dress 20(4)" width="280" height="350">
+	<h2>Dress 20</h2>
+	<p>Price: $ 59</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Red">Red</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 20', 59, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress21">
+	<img src="image21(1).png" alt="Dress 21(1)" width="280" height="350">
+	<img src="image21(2).png" alt="Dress 21(2)" width="280" height="350">
+	<img src="image21(3).png" alt="Dress 21(3)" width="280" height="350">
+	<img src="image21(4).png" alt="Dress 21(4)" width="280" height="350">
+	<h2>Dress 21</h2>
+	<p>Price: $ 69.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Brown">Brown</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 21', 69.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress22">
+	<img src="image22(1).png" alt="Dress 22(1)" width="280" height="350">
+	<img src="image22(2).png" alt="Dress 22(2)" width="280" height="350">
+	<img src="image22(3).png" alt="Dress 22(3)" width="280" height="350">
+	<img src="image22(4).png" alt="Dress 22(4)" width="280" height="350">
+	<h2>Dress 22</h2>
+	<p>Price: $ 49</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Pink">Pink</option>
+			<option value="Black">Black</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 22', 49, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress23">
+	<img src="image23(1).png" alt="Dress 23(1)" width="280" height="350">
+	<img src="image23(2).png" alt="Dress 23(2)" width="280" height="350">
+	<img src="image23(3).png" alt="Dress 23(3)" width="280" height="350">
+	<img src="image23(4).png" alt="Dress 23(4)" width="280" height="350">
+	<h2>Dress 23</h2>
+	<p>Price: $ 69</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+			<option value="XL">XL</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Grey">Grey</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 23', 69, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress24">
+	<img src="image24(1).png" alt="Dress 24(1)" width="280" height="350">
+	<img src="image24(2).png" alt="Dress 24(2)" width="280" height="350">
+	<img src="image24(3).png" alt="Dress 24(3)" width="280" height="350">
+	<img src="image24(4).png" alt="Dress 24(4)" width="280" height="350">
+	<h2>Dress 24</h2>
+	<p>Price: $ 69</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Green">Green</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 24', 49.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress25">
+	<img src="image25(1).png" alt="Dress 25(1)" width="280" height="350">
+	<img src="image25(2).png" alt="Dress 25(2)" width="280" height="350">
+	<img src="image25(3).png" alt="Dress 25(3)" width="280" height="350">
+	<img src="image25(4).png" alt="Dress 25(4)" width="280" height="350">
+	<h2>Dress 25</h2>
+	<p>Price: $ 49</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Pink">Pink</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 25', 49, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress26">
+	<img src="image26(1).png" alt="Dress 26(1)" width="280" height="350">
+	<img src="image26(2).png" alt="Dress 26(2)" width="280" height="350">
+	<img src="image26(3).png" alt="Dress 26(3)" width="280" height="350">
+	<img src="image26(4).png" alt="Dress 26(4)" width="280" height="350">
+	<h2>Dress 26</h2>
+	<p>Price: $ 69</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+			<option value="XL">XL</option>
+			<option value="XXL">XXL</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="White">White</option>
+			<option value="Red">Red</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 26', 69, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress27">
+	<img src="image27(1).png" alt="Dress 27(1)" width="280" height="350">
+	<img src="image27(2).png" alt="Dress 27(2)" width="280" height="350">
+	<img src="image27(3).png" alt="Dress 27(3)" width="280" height="350">
+	<h2>Dress 27</h2>
+	<p>Price: $ 54.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="M">M</option>
+			<option value="L">L</option>
+			<option value="XL">XL</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Green">Green</option>
+			<option value="White">White</option>
+			<option value="Pink">Pink</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 27', 54.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress28">
+	<img src="image28(1).png" alt="Dress 28(1)" width="280" height="350">
+	<img src="image28(2).png" alt="Dress 28(2)" width="280" height="350">
+	<img src="image28(3).png" alt="Dress 28(3)" width="280" height="350">
+	<img src="image28(4).png" alt="Dress 28(4)" width="280" height="350">
+	<h2>Dress 28</h2>
+	<p>Price: $ 79.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Blue">Blue</option>
+			<option value="Green">Green</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 28', 79.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress29">
+	<img src="image29(1).png" alt="Dress 29(1)" width="280" height="350">
+	<img src="image29(2).png" alt="Dress 29(2)" width="280" height="350">
+	<img src="image29(3).png" alt="Dress 29(3)" width="280" height="350">
+	<img src="image29(4).png" alt="Dress 29(4)" width="280" height="350">
+	<h2>Dress 29</h2>
+	<p>Price: $ 69.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Green">Green</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 29', 69.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress30">
+	<img src="image30(1).png" alt="Dress 30(1)" width="280" height="350">
+	<img src="image30(2).png" alt="Dress 30(2)" width="280" height="350">
+	<img src="image30(3).png" alt="Dress 30(3)" width="280" height="350">
+	<img src="image30(4).png" alt="Dress 30(4)" width="280" height="350">
+	<h2>Dress 30</h2>
+	<p>Price: $ 65</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+			<option value="XL">XL</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Beige">Beige</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 30', 65, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress31">
+	<img src="image31(1).png" alt="Dress 31(1)" width="280" height="350">
+	<img src="image31(2).png" alt="Dress 31(2)" width="280" height="350">
+	<img src="image31(3).png" alt="Dress 31(3)" width="280" height="350">
+	<img src="image31(4).png" alt="Dress 31(4)" width="280" height="350">
+	<h2>Dress 31</h2>
+	<p>Price: $ 58.5</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="XS">XS</option>
+			<option value="S">S</option>
+			<option value="M">M</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Blue">Blue</option>
+			<option value="Brown">Brown</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 31', 58.5, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress32">
+	<img src="image32(1).png" alt="Dress 32(1)" width="280" height="350">
+	<img src="image32(2).png" alt="Dress 32(2)" width="280" height="350">
+	<img src="image32(3).png" alt="Dress 32(3)" width="280" height="350">
+	<img src="image32(4).png" alt="Dress 32(4)" width="280" height="350">
+	<h2>Dress 32</h2>
+	<p>Price: $ 100</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Purple">Purple</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 32', 100, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress33">
+	<img src="image33(1).png" alt="Dress 33(1)" width="280" height="350">
+	<img src="image33(2).png" alt="Dress 33(2)" width="280" height="350">
+	<img src="image33(3).png" alt="Dress 33(3)" width="280" height="350">
+	<h2>Dress 33</h2>
+	<p>Price: $ 69.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="M">M</option>
+			<option value="L">L</option>
+			<option value="XL">XL</option>
+			<option value="XXL">XXL</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Blue">Blue</option>
+			<option value="Green">Green</option>
+			<option value="Pink">Pink</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 33', 69.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress34">
+	<img src="image34(1).png" alt="Dress 34(1)" width="280" height="350">
+	<img src="image34(2).png" alt="Dress 34(2)" width="280" height="350">
+	<img src="image34(3).png" alt="Dress 34(3)" width="280" height="350">
+	<img src="image34(4).png" alt="Dress 34(4)" width="280" height="350">
+	<h2>Dress 34</h2>
+	<p>Price: $ 79.9</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+			<option value="XL">XL</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Blue">Blue</option>
+			<option value="Pink">Pink</option>
+			<option value="Red">Red</option>
+			<option value="Brown">Brown</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 34', 79.9, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+<div class="product" id="dress35">
+	<img src="image35(1).png" alt="Dress 35(1)" width="280" height="350">
+	<img src="image35(2).png" alt="Dress 35(2)" width="280" height="350">
+	<img src="image35(3).png" alt="Dress 35(3)" width="280" height="350">
+	<img src="image35(4).png" alt="Dress 35(4)" width="280" height="350">
+	<h2>Dress 35</h2>
+	<p>Price: $ 92.5</p>
+	<form>
+		<label for="size">Size:</label>
+		<select id="size" name="size">
+			<option value="S">S</option>
+			<option value="M">M</option>
+			<option value="L">L</option>
+		</select>
+			
+		<label for="color">Color:</label>
+		<select id="color" name="color">
+			<option value="Pink">Pink</option>
+		</select>
+
+		<button type="button" onclick="addToCart('Dress 35', 92.5, 'color', 'size')">Add to Cart</button>
+	</form>
+</div>
+
+</main>
+
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to Top">↑</button>
+
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeCartModal()">&times;</span>
+                <h2>Your Cart</h2>
+                <ul id="cartItems"></ul>
+                 <p>Total: $<span id="totalAmountDisplay">0.00</span></p>
+                <button onclick="openPaymentModal()">Proceed to Payment</button>
+            </div>
+        </div>
+
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closePaymentModal()">&times;</span>
+                <h2>Payment Options</h2>
+                <p>Select a payment method:</p>
+                <select id="paymentMethod">
+                    <option value="visa">Visa/Debit Card</option>
+                    <option value="grabPay">Grab Pay</option>
+                    <option value="tng">TNG eWallet</option>
+                </select>
+                <button onclick="processPayment()">Proceed to Payment</button>
+            </div>
+        </div>
+
+</body>
+</html>
